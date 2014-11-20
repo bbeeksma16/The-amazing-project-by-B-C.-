@@ -4,12 +4,19 @@
 // 
 
 #include <iostream>
+<<<<<<< HEAD
 #include<fstream>
 #include<string>
+=======
+#include <vector>
+#include "Car.h"
+
+>>>>>>> origin/master
 using namespace std;
 
 int main()
 {
+<<<<<<< HEAD
 	char answer;
 	string username;
 	string line, password;
@@ -47,6 +54,9 @@ int main()
 	}
 	
 
+=======
+	vector<Car> cars;
+>>>>>>> origin/master
 
 	return 0;
 }
