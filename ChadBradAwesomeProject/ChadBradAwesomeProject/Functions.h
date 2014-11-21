@@ -11,17 +11,17 @@ vector<Car> CarsIntoVector()
 	a.setName("Nissan Pickup Truck");
 	a.setWeight(5038);
 	b.setName("Volkswagon Beetle");
-	b.setWeight(5038);
+	b.setWeight(1764);
 	c.setName("Subaru Forester");
-	c.setWeight(5038);
+	c.setWeight(3153);
 	d.setName("Toyota Prius");
-	d.setWeight(5038);
+	d.setWeight(3042);
 	e.setName("Ferrari Italia");
-	e.setWeight(5038);
+	e.setWeight(3274);
 	f.setName("Bugatti Veyron");
 	f.setWeight(4044);
 	g.setName("Tesla Model S");
-	g.setWeight(5038);
+	g.setWeight(4647);
 	h.setName("Leopard 2 Tank");
 	h.setWeight(90000);
 	i.setName("KNTV Smart Car");
@@ -29,11 +29,16 @@ vector<Car> CarsIntoVector()
 	j.setName("Toyota Camry");
 	j.setWeight(3190);
 
-	for (int i = 0; i < 10; i++)
-	{
-		char car = 'a';
-		Cars[i] = car;
-		a++;
+	Cars[0] = a;
+	Cars[1] = b;
+	Cars[2] = c;
+	Cars[3] = d;
+	Cars[4] = e;
+	Cars[5] = f;
+	Cars[6] = g;
+	Cars[7] = h;
+	Cars[8] = i;
+	Cars[9] = j;
 
 	return Cars;
 }
