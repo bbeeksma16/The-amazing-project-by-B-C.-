@@ -4,19 +4,15 @@
 // 
 
 #include <iostream>
-<<<<<<< HEAD
-#include<fstream>
-#include<string>
-=======
+#include <fstream>
+#include <string>
 #include <vector>
 #include "Car.h"
 
->>>>>>> origin/master
 using namespace std;
 
 int main()
 {
-<<<<<<< HEAD
 	char answer;
 	string username;
 	string line, password;
@@ -29,17 +25,17 @@ int main()
 	cin >> answer;
 	if (answer == 'Y' || answer == 'y')
 	{
-	cout << "Username: " ;
-	cin >> username; 
-	account.open(username, ios::in, ios::out);
-	cout << "Password: "; 
-	cin >> password; 
-	account >> line;
-	if (line != password) 
-	{
-		cout << "password incorrect. Please try again" << endl;
+		cout << "Username: " ;
+		cin >> username; 
+		account.open(username, ios::in, ios::out);
+		cout << "Password: "; 
+		cin >> password; 
+		account >> line;
+			if (line != password) 
+			{
+				cout << "password incorrect. Please try again" << endl;
 
-	}
+			}
 	else if (answer == 'N' || answer == 'n')
 	{
 		cout << "Let's create an account then!" << endl;
@@ -53,10 +49,7 @@ int main()
 
 	}
 	
-
-=======
 	vector<Car> cars;
->>>>>>> origin/master
 
 	return 0;
 }

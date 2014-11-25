@@ -42,3 +42,53 @@ vector<Car> CarsIntoVector()
 
 	return Cars;
 }
+
+double getHeight()
+{
+	int i = -1;
+	double height;
+
+	while (i == -1)
+	{
+		cout << "Please enter what you want the height of the suspension pole to be (between 0 and 1000 feet):";
+		cin >> height;
+
+		if (height < 0 || height > 1000)
+			cout << "Height out of range." << endl;
+		else
+			i = 1;
+	}
+
+	return height;
+}
+
+double getThickness()
+{
+	int i = -1;
+	double thickness;
+
+	while (i == -1)
+	{
+		cout << "Please enter what you want the thickness of the bridge to be (between 0 and 100 feet):";
+		cin >> thickness;
+
+		if (thickness < 0 || thickness > 100)
+			cout << "Thickness out of range." << endl;
+		else
+			i = 1;
+	}
+
+	return thickness;
+}
+
+double getMaterial()
+{
+	double modulus;
+	string material;
+	cout << "The following are all available materials for the bridge: "; //finish this section with your modulus information
+	cout << "Which material would you like the bridge to be made out of: ";
+	cin >> material;
+
+	// write code here that will convert the material choice into their cooresponding modulus.
+	return modulus;
+}
