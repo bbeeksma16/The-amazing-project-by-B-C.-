@@ -96,8 +96,6 @@ double getMaterial()
 
 vector<string> InputUsername ()
 {
-	vector<string> usernames;
-
 	ifstream input;
 	input.open( "usernameList.txt", ios::in ); 
 
@@ -105,7 +103,8 @@ vector<string> InputUsername ()
 		cout << "The file does not exist..." << endl; //make sure it opened properly
 	}
 
-	int lineCount, NumberUsernames;
+	int lineCount = 0;
+	int NumberUsernames = 0;
 	string line;
 	while (getline(input, line)) { //getting the amount of candies being added
 	lineCount++;
@@ -115,6 +114,8 @@ vector<string> InputUsername ()
 	input.seekg(0);
 
 	NumberUsernames = lineCount / 2;
+
+	vector<string> usernames(NumberUsernames);
 
 	for (int i = 0; i < NumberUsernames; i++)
 	{
@@ -131,8 +132,6 @@ vector<string> InputUsername ()
 
 vector<string> InputPasswords ()
 {
-	vector<string> passwords;
-
 	ifstream input;
 	input.open( "usernameList.txt", ios::in ); 
 
@@ -140,7 +139,8 @@ vector<string> InputPasswords ()
 		cout << "The file does not exist..." << endl; //make sure it opened properly
 	}
 
-	int lineCount, NumberPasswords;
+	int lineCount = 0;
+	int NumberPasswords = 0;
 	string line;
 	while (getline(input, line)) { //getting the amount of candies being added
 	lineCount++;
@@ -150,6 +150,8 @@ vector<string> InputPasswords ()
 	input.seekg(0);
 
 	NumberPasswords = lineCount / 2;
+
+	vector<string> passwords(NumberPasswords);
 
 	for (int i = 0; i < NumberPasswords; i++)
 	{
