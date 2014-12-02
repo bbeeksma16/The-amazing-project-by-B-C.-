@@ -1,5 +1,6 @@
 #include <vector>
 #include "Car.h"
+#include <fstream>
 using namespace std;
 
 vector<Car> CarsIntoVector()
@@ -91,4 +92,89 @@ double getMaterial()
 
 	// write code here that will convert the material choice into their cooresponding modulus.
 	return modulus;
+}
+
+vector<string> InputUsername ()
+{
+	vector<string> usernames;
+
+	ifstream input;
+	input.open( "usernameList.txt", ios::in ); 
+
+	if ( !input ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	int lineCount, NumberUsernames;
+	string line;
+	while (getline(input, line)) { //getting the amount of candies being added
+	lineCount++;
+	}
+
+	input.clear(); //resetting the input to the beginning
+	input.seekg(0);
+
+	NumberUsernames = lineCount / 2;
+
+	for (int i = 0; i < NumberUsernames; i++)
+	{
+		getline(input, line); //gets username
+		usernames[i] = line; //adds it to the vector
+
+		getline(input, line); //skips over the password line
+	}
+
+	input.close();
+
+	return usernames;
+}
+
+vector<string> InputPasswords ()
+{
+	vector<string> passwords;
+
+	ifstream input;
+	input.open( "usernameList.txt", ios::in ); 
+
+	if ( !input ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	int lineCount, NumberPasswords;
+	string line;
+	while (getline(input, line)) { //getting the amount of candies being added
+	lineCount++;
+	}
+
+	input.clear(); //resetting the input to the beginning
+	input.seekg(0);
+
+	NumberPasswords = lineCount / 2;
+
+	for (int i = 0; i < NumberPasswords; i++)
+	{
+		getline(input, line); //skips over the username line
+
+		getline(input, line); //gets the password
+		passwords[i] = line; //adds it to the vector
+	}
+
+	input.close();
+
+	return passwords;
+}
+
+void addUsername(string Username, string Password)
+{
+	ofstream output;
+	output.open( "usernameList.txt", ios::app );
+
+	if ( !output ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	output << endl << Username;
+	output << endl << Password;
+
+	output.close();
 }
