@@ -51,7 +51,7 @@ double getHeight()
 
 	while (i == -1)
 	{
-		cout << "Please enter what you want the height of the suspension pole to be (between 0 and 1000 feet):";
+		cout << "Please enter what you want the height of the suspension pole to be (between 0    and 1000 feet): ";
 		cin >> height;
 
 		if (height < 0 || height > 1000)
@@ -70,7 +70,7 @@ double getThickness()
 
 	while (i == -1)
 	{
-		cout << "Please enter what you want the thickness of the bridge to be (between 0 and 100 feet):";
+		cout << endl << "Please enter what you want the thickness of the bridge to be (between 0 and 100  feet): ";
 		cin >> thickness;
 
 		if (thickness < 0 || thickness > 100)
@@ -86,7 +86,7 @@ double getMaterial()
 {
 	double modulus;
 	string material;
-	cout << "The following are all available materials for the bridge: "; //finish this section with your modulus information
+	cout << endl << "The following are all available materials for the bridge: "; //finish this section with your modulus information
 	cout << "Which material would you like the bridge to be made out of: ";
 	cin >> material;
 

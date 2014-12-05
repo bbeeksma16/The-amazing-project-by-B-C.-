@@ -22,3 +22,5 @@ public:
 };
 
 #endif
+
+ostream& operator<<(ostream& os, Car& c);
