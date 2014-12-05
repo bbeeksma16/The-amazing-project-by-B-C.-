@@ -8,48 +8,87 @@
 #include <string>
 #include <vector>
 #include "Car.h"
+#include "Functions.h"
+//#include "Calculations.h"
+
 
 using namespace std;
 
 int main()
 {
+
+	int dowhile = 0;
 	char answer;
 	string username;
-	string line, password;
-	fstream account;
+	string password, line;
+	ifstream account;
 	cout << "Welcome to the Bridge-Builder!!" << endl;
 	cout << "In this game you must get poor sheep-car across a bridge that you designed." << endl;
 	cout << endl;
-	cout << "Do you have an account?" << endl;
-	cout << "(Y/N):";
-	cin >> answer;
-	if (answer == 'Y' || answer == 'y')
+	account.open("usernameList.txt");
+	vector<string> usernameslist = InputUsername();
+	vector<string> passwordslist = InputPasswords();
+	int index = -1;
+
+	do
 	{
-		cout << "Username: " ;
-		cin >> username; 
-		account.open(username, ios::in, ios::out);
-		cout << "Password: "; 
-		cin >> password; 
-		account >> line;
-			if (line != password) 
+		cout << "Do you have an account?" << endl;
+		cout << "(Y/N):";
+		cin >> answer;
+		if (answer == 'Y' || answer == 'y') // User has account
+		{
+			cout << "Username: ";
+			cin >> username;
+			for (int i = 0; i < usernameslist.size(); i++)
 			{
-				cout << "password incorrect. Please try again" << endl;
-
+				if (usernameslist[i] == username)
+				{
+					index = i;
+				}
 			}
-	else if (answer == 'N' || answer == 'n')
-	{
-		cout << "Let's create an account then!" << endl;
-		cout << "What do you want your username to be? " ;
-		cin >> username;
-		account.open(username, ios::out);
-		cout << endl;
-		cout << "What is your password? ";
-		cin >> password;
-		account << password; 
+			if (index == -1)
+			{
+				cout << "Username not found. Please try again." << endl;
+				dowhile = 0;
+			}
+			else
+			{
+				cout << "Password: ";
+				cin >> password;
+				if (passwordslist[index] == password)
+				{
+					dowhile = 1;
+				}
+				else
+				{
+					cout << "Password not correct, please try again." << endl;
+					dowhile = 0;
+				}
+			}
 
-	}
-	
-	vector<Car> cars;
+			
+		}
+		else if (answer == 'N' || answer == 'n') // User is making an account
+		{
+			cout << "Let's create an account then!" << endl;
+			cout << "What do you want your username to be? ";
+			cin >> username;
+			cout << endl;
+			cout << "What is your password? ";
+			cin >> password;
+			addUsername(username, password);
+			dowhile = 1;
+		}
+		else
+		{
+			cout << "That is not a valid answer. Please try again" << endl;
+			dowhile = 0;
 
-	return 0;
+		}
+	} while (dowhile == 0);
+		
+
+			vector<Car> cars;
+
+			return 0;
 }
