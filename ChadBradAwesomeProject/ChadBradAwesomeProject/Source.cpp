@@ -89,7 +89,7 @@ int main()
 	//} while (dowhile == 0);
 		
 
-	vector<Car> cars = CarsIntoVector();
+	/*vector<Car> cars = CarsIntoVector();
 
 	srand (time(NULL));
 	int random = rand() % 10;
@@ -98,7 +98,12 @@ int main()
 
 	getHeight();
 	getThickness();
-	getMaterial();
+	getMaterial();*/
 
-			return 0;
+	/*vector<string> highScoreUsernames = InputHighScoreUsernames();
+	vector<double> highScores = InputHighScores();*/
+
+	OutputHighScores();
+
+	return 0;
 }

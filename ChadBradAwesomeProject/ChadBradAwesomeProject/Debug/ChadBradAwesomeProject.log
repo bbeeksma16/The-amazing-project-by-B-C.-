@@ -1,9 +1,10 @@
-﻿Build started 12/4/2014 6:58:00 PM.
+﻿Build started 12/5/2014 4:52:17 PM.
      1>Project "C:\Users\Chad Thomas\Documents\GitHub\The-amazing-project-by-B-C.-\ChadBradAwesomeProject\ChadBradAwesomeProject\ChadBradAwesomeProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-     1>c:\users\chad thomas\documents\github\the-amazing-project-by-b-c.-\chadbradawesomeproject\chadbradawesomeproject\source.cpp(94): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\chad thomas\documents\github\the-amazing-project-by-b-c.-\chadbradawesomeproject\chadbradawesomeproject\functions.h(307): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\chad thomas\documents\github\the-amazing-project-by-b-c.-\chadbradawesomeproject\chadbradawesomeproject\functions.h(309): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\chad thomas\documents\github\the-amazing-project-by-b-c.-\chadbradawesomeproject\chadbradawesomeproject\source.cpp(22): warning C4101: 'answer' : unreferenced local variable
      1>c:\users\chad thomas\documents\github\the-amazing-project-by-b-c.-\chadbradawesomeproject\chadbradawesomeproject\functions.h(94): warning C4700: uninitialized local variable 'modulus' used
        Link:
@@ -15,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.26
+Time Elapsed 00:00:01.79

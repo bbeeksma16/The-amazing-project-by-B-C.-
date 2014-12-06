@@ -142,7 +142,7 @@ vector<string> InputPasswords ()
 	int lineCount = 0;
 	int NumberPasswords = 0;
 	string line;
-	while (getline(input, line)) { //getting the amount of candies being added
+	while (getline(input, line)) { //getting the amount of usernames being added
 	lineCount++;
 	}
 
@@ -179,4 +179,126 @@ void addUsername(string Username, string Password)
 	output << endl << Password;
 
 	output.close();
+}
+
+vector<string> InputHighScoreUsernames ()
+{
+	ifstream input;
+	input.open( "HighScores.txt", ios::in ); 
+
+	if ( !input ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	int lineCount = 0;
+	int NumberUsernames = 0;
+	string line;
+	while (getline(input, line)) { //getting the amount of usernames being added
+	lineCount++;
+	}
+
+	input.clear(); //resetting the input to the beginning
+	input.seekg(0);
+
+	NumberUsernames = lineCount / 2;
+
+	vector<string> usernames(NumberUsernames);
+
+	for (int i = 0; i < NumberUsernames; i++)
+	{
+		getline(input, line); //gets username
+		usernames[i] = line; //adds it to the vector
+
+		getline(input, line); //skips over the score line
+	}
+
+	input.close();
+
+	return usernames;
+}
+
+vector<double> InputHighScores ()
+{
+	ifstream input;
+	input.open( "HighScores.txt", ios::in ); 
+
+	if ( !input ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	int lineCount = 0;
+	int NumberScores = 0;
+	double score = 0;
+	string line;
+	while (getline(input, line)) { //getting the amount of scores being added
+	lineCount++;
+	}
+
+	input.clear(); //resetting the input to the beginning
+	input.seekg(0);
+
+	NumberScores = lineCount / 2;
+
+	vector<double> scores(NumberScores);
+
+	for (int i = 0; i < NumberScores; i++)
+	{
+		getline(input, line); //skips over the username line
+
+		input >> score; //gets the score
+		scores[i] = score; //adds it to the vector
+
+		getline(input, line);
+	}
+
+	input.close();
+
+	return scores;
+}
+
+void addScore(string Username, double Score)
+{
+	ofstream output;
+	output.open( "HighScores.txt", ios::app );
+
+	if ( !output ) {
+		cout << "The file does not exist..." << endl; //make sure it opened properly
+	}
+
+	output << endl << Username;
+	output << endl << Score;
+
+	output.close();
+}
+
+void OutputHighScores()
+{
+	vector<string> highScoreUsernames = InputHighScoreUsernames();
+	vector<double> highScores = InputHighScores();
+
+	for (int g = 0; g < highScores.size(); g++) //sort it as many times as there are candies in the store
+	{
+		for (int i = 0; i < highScores.size() - 1; i++)
+		{
+			double b = highScores[i];
+			double c = highScores[i+1];
+			string d = highScoreUsernames[i];
+			string e = highScoreUsernames[i+1];
+
+			if (b < c) //if the candy is more expensive than the candy after it
+			{
+				highScores[i] = c;
+				highScores[i+1] = b;
+				highScoreUsernames[i] = e;
+				highScoreUsernames[i+1] = d;
+			}
+		}
+	}
+
+	cout << highScores[0] << endl;
+	cout << highScoreUsernames[0] << endl;
+	cout << highScores[1] << endl;
+	cout << highScoreUsernames[1] << endl;
+	cout << highScores[2] << endl;
+	cout << highScoreUsernames[2] << endl;
 }

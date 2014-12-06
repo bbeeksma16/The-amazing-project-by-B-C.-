@@ -10,6 +10,6 @@ void Car::setColor(string Color) {color = Color;}
 ostream& operator<<(ostream& os, Car& c)
 {
 os << "A " << c.getName() << ", with a total weight of " <<
-c.getWeight() << ", is about to drive across your bridge. Design a bridge that will support this vehicle." << endl << endl;
+c.getWeight() << " lbs, is about to drive across your bridge. Design a bridge that will support this vehicle." << endl << endl;
 return os;
 }
