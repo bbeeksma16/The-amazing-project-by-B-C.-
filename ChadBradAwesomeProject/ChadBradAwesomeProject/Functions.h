@@ -51,7 +51,7 @@ double getHeight()
 
 	while (i == -1)
 	{
-		cout << "Please enter what you want the height of the suspension pole to be (between 0    and 1000 feet): ";
+		cout << "Please enter what you want the height of the truss bridge to be (between 0 " << endl << "and 1000 feet): ";
 		cin >> height;
 
 		if (height < 0 || height > 1000)
@@ -62,6 +62,7 @@ double getHeight()
 
 	return height;
 }
+
 
 double getThickness()
 {
@@ -82,16 +83,19 @@ double getThickness()
 	return thickness;
 }
 
-double getMaterial()
+int getMaterial()
 {
-	double modulus;
-	string material;
-	cout << endl << "The following are all available materials for the bridge: "; //finish this section with your modulus information
-	cout << "Which material would you like the bridge to be made out of: ";
+	int material;
+	cout << endl << "The following are all available materials for the bridge: " << endl; //finish this section with your modulus information
+	cout << "\t 1) Concrete" << endl;
+	cout << "\t 2) A36 Steel" << endl;
+	cout << "\t 3) Titanium" << endl;
+	cout << "\t 4) 6061 Aluminum" << endl;
+	cout << "Which material would you like the bridge to be made out of: " << endl;
 	cin >> material;
 
 	// write code here that will convert the material choice into their cooresponding modulus.
-	return modulus;
+	return material;
 }
 
 vector<string> InputUsername ()

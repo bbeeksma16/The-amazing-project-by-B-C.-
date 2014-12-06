@@ -5,11 +5,17 @@
 
 // T = (V * Q)/(I * t)
 
-double maxShear(double height, double thickness, double weight)
+double maxShear(double th, double w)
 {
 	double width = 24 * 12;
-	T = (weight * (width  * (thickness / 2))* (thickness / 4)) / ((1 / 12)*width*thickness*thickness*thickness*width);
+	double T = (w * (width  * (th / 2))* (th / 4)) / ((1 / 12)*width*th*th*th*width);
 	return T;
+}
+
+// Function for the utilization of the height's effect on the shear force. 
+double heightCalc(double h, double V)
+{
+
 }
 
 // Yield strengthes of each materials: 
@@ -18,8 +24,9 @@ double maxShear(double height, double thickness, double weight)
 // T - 32 633 psi
 // A - 40 000 psi
 
-bool failure(char material, float T)
+bool failure(int material, double shear)
 {
+	double yield;
 	switch (material)
 	{
 	case 1:
@@ -37,7 +44,7 @@ bool failure(char material, float T)
 	default:
 		yield = 4000;
 	}
-	if (yield <= T)
+	if (yield <= shear)
 	{
 		return true;
 	}
