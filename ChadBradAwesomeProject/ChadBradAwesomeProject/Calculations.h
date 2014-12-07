@@ -6,7 +6,13 @@
 
 using namespace std;
 
-double maxShear(double th, double w);
-double heightCalc(double h, double V);
+double beamSize();
 
+double maxTension(double h, double V);
+
+double stress(double P, double A);
+
+bool failure(int m, double sigma);
+
+double score(double sigma, int m);
 #endif

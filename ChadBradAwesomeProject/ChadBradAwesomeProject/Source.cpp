@@ -8,16 +8,16 @@
 #include <string>
 #include <vector>
 #include <time.h>
+#include <math.h>
 #include "Car.h"
 #include "Functions.h"
-//#include "Calculations.h"
+#include "Calculations.h"
 
 
 using namespace std;
 
 int main()
 {
-
 	int dowhile = 0;
 	char answer;
 	string username;
@@ -89,19 +89,36 @@ int main()
 	//} while (dowhile == 0);
 		
 
-	/*vector<Car> cars = CarsIntoVector();
+	vector<Car> cars = CarsIntoVector();
 
 	srand (time(NULL));
 	int random = rand() % 10;
 
 	cout << cars[random];
 
-	getHeight();
-	getThickness();
-	getMaterial();*/
+	cout << "The bridge needs to be 600 ft " << endl << endl;
+	double h = getHeight();
+	cout << endl;
+	//getThickness();
+	int m = getMaterial(); 
+	cout << endl;
+	double A = beamSize(); 
+	cout << endl;
+	double P = maxTension(h, cars[random].getWeight()); // finds amount of force on bridge
+	double sigma = stress(P,A); // evaluates stress
+	bool breaks = failure(m, sigma); // if true, the bridge breaks
+	if ( breaks == 0)
+	{cout << "Good job! Your bridge stands. " << endl;}
+	else if (breaks == 1)
+	{ cout << "Your bridge broke under the weight. Better luck next time!" << endl;
+		return 0;}
+	else
+	{return 0;}
+	double points = score(sigma, m);
+	cout << "You earned " << floor(points) << " points!" << endl;
 
-	/*vector<string> highScoreUsernames = InputHighScoreUsernames();
-	vector<double> highScores = InputHighScores();*/
+	vector<string> highScoreUsernames = InputHighScoreUsernames();
+	vector<double> highScores = InputHighScores();
 
 	OutputHighScores();
 
