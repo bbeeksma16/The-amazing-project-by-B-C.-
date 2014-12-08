@@ -14,6 +14,7 @@ double beamSize() // Asks user what size beams for bridge
 	cout << "\t 2) W15 X 26" << endl;
 	cout << "\t 3) W12 X 14" << endl;
 	cout << "\t 4) W6 X 9" << endl;
+	cout << "Size of I-beams: ";
 	cin >> choice;
 	switch (choice)
 	{

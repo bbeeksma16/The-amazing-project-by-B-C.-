@@ -15,8 +15,8 @@ vector<Car> CarsIntoVector()
 	b.setWeight(1764);
 	c.setName("Subaru Forester");
 	c.setWeight(3153);
-	d.setName("Toyota Prius");
-	d.setWeight(3042);
+	d.setName("Semi Truck");
+	d.setWeight(35000);
 	e.setName("Ferrari Italia");
 	e.setWeight(3274);
 	f.setName("Bugatti Veyron");
@@ -27,8 +27,8 @@ vector<Car> CarsIntoVector()
 	h.setWeight(90000);
 	i.setName("KNTV Smart Car");
 	i.setWeight(1800);
-	j.setName("Toyota Camry");
-	j.setWeight(3190);
+	j.setName("Gas Tanker");
+	j.setWeight(60000);
 
 	Cars[0] = a;
 	Cars[1] = b;
@@ -91,10 +91,9 @@ int getMaterial()
 	cout << "\t 2) A36 Steel" << endl;
 	cout << "\t 3) Titanium" << endl;
 	cout << "\t 4) 6061 Aluminum" << endl;
-	cout << "Which material would you like the bridge to be made out of: " << endl;
+	cout << "Which material would you like the bridge to be made out of: ";
 	cin >> material;
 
-	// write code here that will convert the material choice into their cooresponding modulus.
 	return material;
 }
 
@@ -299,10 +298,11 @@ void OutputHighScores()
 		}
 	}
 
-	cout << highScores[0] << endl;
-	cout << highScoreUsernames[0] << endl;
-	cout << highScores[1] << endl;
-	cout << highScoreUsernames[1] << endl;
-	cout << highScores[2] << endl;
-	cout << highScoreUsernames[2] << endl;
+	cout << endl << endl;
+
+	cout << "Current High Scores" << endl;
+	cout << "_____________________________________" << endl;
+	cout << "1. " << highScores[0] << "    " << highScoreUsernames[0] << endl;
+	cout << "2. " << highScores[1] << "    " << highScoreUsernames[1] << endl;
+	cout << "3. " << highScores[2] << "    " << highScoreUsernames[2] << endl;
 }
