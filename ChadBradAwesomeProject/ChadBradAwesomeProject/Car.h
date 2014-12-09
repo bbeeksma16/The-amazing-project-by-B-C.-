@@ -6,21 +6,19 @@
 
 using namespace std;
 
-class Car
+class Car //comments in the cpp file
 {
 private:
 	string name;
 	double weight;
-	string color;
+	
 public:
 	string getName();
 	void setName(string Name);
 	double getWeight();
 	void setWeight(double Weight);
-	string getColor();
-	void setColor(string Color);
 };
 
 #endif
 
-ostream& operator<<(ostream& os, Car& c);
+ostream& operator<<(ostream& os, Car& c); 

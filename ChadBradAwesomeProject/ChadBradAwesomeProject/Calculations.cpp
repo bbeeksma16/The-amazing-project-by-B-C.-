@@ -12,13 +12,13 @@ double beamSize() // Asks user what size beams for bridge
 	cout << "What size I-beams would you like to construct your bridge with? "  << endl;
 	cout << "\t 1) W24 X 55" << endl;
 	cout << "\t 2) W15 X 26" << endl;
-	cout << "\t 3) W12 X 14" << endl;
+	cout << "\t 3) W12 X 14" << endl; //displays options for the bridge
 	cout << "\t 4) W6 X 9" << endl;
 	cout << "Size of I-beams: ";
 	cin >> choice;
 	switch (choice)
 	{
-	case 1:
+	case 1: //gets the cooresponding beam area with their choice
 		A = 16.2;
 		break;
 	case 2:
@@ -30,15 +30,18 @@ double beamSize() // Asks user what size beams for bridge
 	case 4:
 		A = 2.68;
 		break;
-	default:
-		A = 7.68;
+	default: //by default most bridges have W15 X 26 I-beams
+		{
+			A = 7.68;
+			cout << "Invalid choice. Your bridge will have a default I-beam size of W15 X 26 " << endl; //cout their default I-beam size
+		}
 	}
 	return A; // returns area
 }
 
-double stress(double P, double A)
+double stress(double P, double A) //calculates the stress of the bridge beams
 {
-	double sigma = P / A;
+	double sigma = P / A; //
 	return sigma;
 }
 
@@ -63,7 +66,7 @@ bool failure(int material, double sigma) // returns if material will break
 	double yield;
 	switch (material)
 	{
-	case 1:
+	case 1: //gives the cooresponding yield of the material depending on what their choice was
 		yield = 4000;
 		break;
 	case 2:
@@ -78,23 +81,23 @@ bool failure(int material, double sigma) // returns if material will break
 	default:
 		yield = 4000;
 	}
-	if (yield <= sigma)
+	if (yield <= sigma) //if the yield is less than the stress, the bridge breaks
 	{
 		return true;
 	}
-	else
+	else //otherwise, it stays standing
 	{
 		return false;
 	}
 }	
 
-double score(double sigma, int m)
+double score(double sigma, int m) //apply a score based on cost effectiveness of their design
 {
 	double pointsoff, score;
 	switch (m)
 	{
 	case 1:
-		pointsoff = sigma / 4000;
+		pointsoff = sigma / 4000; //gives score based on how close to breaking point they were
 		break;
 	case 2:
 		pointsoff = sigma / 36000;
@@ -108,6 +111,6 @@ double score(double sigma, int m)
 	default:
 		pointsoff = sigma;
 	}
-	score = 100000 * pointsoff;
+	score = 100000 * pointsoff; //everyone likes really large high scores!
 	return score;
 }

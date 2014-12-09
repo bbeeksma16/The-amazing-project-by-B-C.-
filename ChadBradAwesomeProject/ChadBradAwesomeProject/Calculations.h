@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-using namespace std;
+using namespace std; //comments in cpp file
 
 double beamSize();
 
