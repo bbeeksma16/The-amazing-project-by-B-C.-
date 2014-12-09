@@ -1,8 +1,3 @@
-//B-
-// Trying to work out the account system 
-// This text file will hold the password on the first line
-// 
-
 #include <iostream>
 #include <fstream>
 #include <string>
